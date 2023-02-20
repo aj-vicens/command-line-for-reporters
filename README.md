@@ -172,7 +172,6 @@ This was a *very* basic runthrough of what CSVKit can do. I would highly recomme
 It's really not that hard to pick up some command line skills. Just like anything else, if you mess around with it and use it when you can you'll start to get the hang of it. Here are several handy places to learn:
 
 * [Codeacademy](https://www.codecademy.com/learn/learn-the-command-line)  
-* [Learn Command Line the Hard Way](https://learncodethehardway.org/unix/)  
 * Noah Veltman's [Command Line Murders](https://github.com/veltman/clmystery)
 * [O'Reilly's "Linux Pocket Guide"](http://shop.oreilly.com/product/0636920023029.do?green=B78D23C2-6E87-58C8-BAE1-0090A206787F&intcmp=af-mybuy-0636920023029.IP)
 * Take a spin through some of the past NICAR command line instructions, including those put together by [Chris Keller, Jue Yang (and me)](https://github.com/chrislkeller/nicar15-command-line-basics), and another by [Kendall Taggart and Agustin Armendariz](https://github.com/armendariz/terminal_recipes).
