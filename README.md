@@ -29,6 +29,8 @@ Once you have the terminal launched you'll see the date of the last time you lau
 
 In the intersest of saving space, I've customized mine to simply display the `$`.
 
+![terminal screenshot](images/Screenshot 2023-02-20 at 4.10.55 PM.png)
+
 ([Here's how to do that.](https://techstacker.com/change-your-terminal-name-macos/))
 
 ### Some basic navigation tips and quick commands
