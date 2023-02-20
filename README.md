@@ -27,6 +27,10 @@ Once you have the terminal launched you'll see the date of the last time you lau
 
 ![terminal screenshot](images/terminal_open_ss.png)
 
+In the intersest of saving space, I've customized mine to simply display the `$`.
+
+([Here's how to do that.](https://techstacker.com/change-your-terminal-name-macos/))
+
 ### Some basic navigation tips and quick commands
 #### `man`, `pwd`, `cd`, `ls`, `cp`, `mv`, `cat`, `ctrl + a`, `ctrl + e`, `|`, `>`, `>>`, `clear`, *tab complete*
 Now that you have your Terminal app running, let's get the hang of some of the more basic commands and concepts:
