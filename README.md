@@ -3,6 +3,8 @@
 
 Anyone can do a lot with a computer through its command line. But for reporters—who spend an unnatural and likely unhealthy amount of time with their computers—there are some key commands and command line-based tools that can make life a whole lot easier. Using the command line isn't coding in the way that writing in Python or Javascript or C++ is, but mastering it is a good introduction to that world, a step toward learning and using those languages, and a way that anyone can do a whole lot more with their computer.
 
+*Note: If you are a Windows user, these commands will not apply. While the concepts are similar, Windows has its own command prompt with its own commands, strengths and weaknesses. All of it is beyond the scope of this guide. [Here's a decent place to start](https://www.computer-pdf.com/tutorials-windows-command-prompt). 
+
 ### First things first: What is the "command line"?
 
 The command line is the place where you can give your computer text commands that your computer will then attempt to execute. Unlike a typical graphical user interface (GUI)—where you drag a cursor around with a mouse and click into folders and on applications to launch them—the command line takes typed commands. You might think it's more efficient to use your mouse and click around to get into folders and launch apps, but once you get the hang of simple text commands to do everything from launching programs to working with files you'll see how much more efficient the command line can be.
