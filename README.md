@@ -39,6 +39,8 @@ Now that you have your Terminal app running, let's get the hang of some of the m
 
 `man`: Every one of the terminal's 1,400-plus commands has it's own manual page. Call it up with `man [command]`. So you could type `man man` if you wanted the manual for how that works, for instance. In some cases the manual spans more than one page and you can use the space bar to scroll. Hit `q` to get out.
 
+![terminal prompt screenshot](images/man_man_nicar_23.png)
+
 `pwd`: This command tells the computer to `print working directory`, which is another way of saying "tell me where I am in my computer system." You'll use this a lot to figure out where you are, especially when you start moving around with...
 
 `cd`: ...this command, which means `change directory`. This command can move you from one directory to another. If I was in `Users/avicens` and I wanted to get to my `Desktop`, I'd type `cd Desktop`. If I want to move up one level, I'd type `cd ..`, and if I wanted to move two levels up, I'd type `cd ../..`. By default, a Unix system will start you in your `home` directory (represented typically by a `~`).
@@ -122,11 +124,11 @@ Let's get out of our `QuickTest` directory with `cd ..`. Now let's remove that f
 That was just a quick example to show how we can create directories, files, files within directories, and then remove them.
 
 #### Let's jump in to CSVKit.
-For my quick tutorial we'll be using crime data from December 2019 collected by the British government about [policing in the UK](https://data.police.uk/). The file we'll start with is called [2019-12-metropolitan-street.csv](https://github.com/AJVicens/command-line-for-reporters/blob/master/2019-12-metropolitan-street.csv). To get the raw data, click on the file name in the main repo, click `Raw` to get the raw data, and then save-as with whatever file name you want in the `.csv` format.
+For my quick tutorial we'll be using [UFO sighting data](https://think.cs.vt.edu/corgis/csv/ufo_sightings/) organized by the "R for Data Science Online Learning Community" in 2019, which seems to be based on the work of another researcher who attempted to organize a century's worth of UFO reports from the NATIONAL UFO Reporting Center Online Database. [As the researcher explains](https://github.com/planetsig/ufo-reports), the data was incredibly difficult to standardize and is likely incomplete. But, for our purposes, this is a good set to explore. 
 
-The data set includes various codes used by the city, location data, crime codes, and other information that could come in handy depending on what you're trying to do. You could always open Excel to peek at your data:
+The data contains interesting datapoints for us to search on, group by and perhaps conjure up some story ideas:
 
-![excel screenshot](images/uk_excel_ss.png)
+![data dictionary screenshot](images/ufo_data_types_nicar_23.png)
 
 How many rows are in this spreadsheet? You can count manually in Excel, sure. Or, in the command line, you could type `wc -l 2019[tab complete]` and see that there are 86,075 rows very quickly (it doesn't count the header row). You'll come to learn that cruising around in the command line can be very quick.
 
