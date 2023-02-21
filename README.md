@@ -184,13 +184,21 @@ It's great to look in our terminal window but we probably prefer those new colum
 
 ![csvcut on new trimmed file](images/csvcut_redirect.png)
 
-Ah ha! Now we're down to five columns. That's a bit more manageable. Let's run some basic stats on these columns with the `csvstat` command. So, `csvstat uk_cri[tab complete].` This command quickly summarizes the data in our columns, giving us a quick overview of what we're working with. The `Latitude` and `Longitude` statistics aren't all that telling, so there's no reason to focus there right now. But the `Location`, `Crime type`, and `Last outcome category` columns did return some basic counts that we can look at.
+If you run `ls` -- the command from above to list all the files in your current directory -- you'll see our new `ufos_trimmed.csv` sitting there. Awesome. Run `wc -l ufos[tab complete]` and verify that it has all of those 60,633 rows from before. You're doing great.
 
-![stats screenshot](images/uk_stats_ss.png)
+We're down to our five columns. That's a bit more manageable. Let's re-run the `csvstat` command to check back in with what we have. This is much more manageable than the 16 sets of data we had before, and we can now start pulling out specifics that stand out. The UFO nerd in me immediately gravitates to one set of data immediately: shape.
 
-Now we have a quick idea that there are nearly 21,000 unique locations, with the leading one being "On or near Supermarket" coming in at 3,254 total. We can also see that "Violence and sexual offences" were the most common crime logged in December 2019 (18,093), and the vast majority of the crimes -- 65,559 -- were categorized as still under investigation.
+![shape stats screenshot](images/csvstat_shape_ufo.png)
 
-Interesting. Obviously you're not going to write a story relying only on this super quick analysis. But within a few minutes we already have a decent idea of what we're working with and potential angles for further research and reporting. We can apply the same idea on a more granular level.
+We immediately see that the most common shapes are lights (12,895) followed by triangles 6,268). Triangles are a key shape in the UFO world, so I want to make an additional sheet just for triangles. We can also list out all 28 unique entries in the shape column with this command: `csvcut -c 3 ufos_trimmed.csv | sed 1d | sort | uniq`. If you want to dig in more, [`sed`](https://www.interviewkickstart.com/learn/sed-command-in-linux-unix-with-examples) is a powerful tool for working with text, and `uniq` is a command built into the command line for filtering out repeated lines in a file (run `man uniq` to learn more). 
+
+That command tells us we have other shapes such as "changed" and "changing," and "cigar" (which is very common), but also things like "cylinder," "egg," "disk" and others. 
+
+
+
+
+
+
 
 I want to dig in a bit on the type of crimes that were reported "On or near Supermarket". Luckily we can do this very easily. First, let's grab all the rows that match "On or near Supermarket": `csvcut 1-5 uk_cri[tab complete] | csvgrep -c Location -m "On or near Supermarket" | csvsort -c "Crime type" -r | csvlook`
 
