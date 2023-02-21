@@ -126,9 +126,16 @@ That was just a quick example to show how we can create directories, files, file
 #### Let's jump in to CSVKit.
 For my quick tutorial we'll be using [UFO sighting data](https://think.cs.vt.edu/corgis/csv/ufo_sightings/) organized by the "R for Data Science Online Learning Community" in 2019, which seems to be based on the work of another researcher who attempted to organize a century's worth of UFO reports from the NATIONAL UFO Reporting Center Online Database. [As the researcher explains](https://github.com/planetsig/ufo-reports), the data was incredibly difficult to standardize and is likely incomplete. But, for our purposes, this is a good set to explore.
 
-Let's try and download the data directly from the command line using [`curl`](https://www.freecodecamp.org/news/how-to-start-using-curl-and-why-a-hands-on-introduction-ea1c913caaaa/), a powerful tool that can do all kinds of things, including pull data off websites and servers. 
+Let's try and download the data directly from the command line using [`curl`](https://www.freecodecamp.org/news/how-to-start-using-curl-and-why-a-hands-on-introduction-ea1c913caaaa/), a powerful tool that can do all kinds of things, including pull data off websites and servers. Luckily this is fairly straight forward:
+
+1. We're invoking `curl`
+2. We are feeding curl the location of the csv file we want (https://think.cs.vt.edu/corgis/datasets/csv/ufo_sightings/ufo_sightings.csv)
+
+![curl raw](images/curl_no_output.png)
 
 `curl https://think.cs.vt.edu/corgis/datasets/csv/ufo_sightings/ufo_sightings.csv -o nicar_23_ufos.csv`
+
+SCREENSHOT
 
 The data contains interesting datapoints for us to search on, group by and perhaps conjure up some story ideas:
 
