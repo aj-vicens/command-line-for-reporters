@@ -133,13 +133,15 @@ Let's try and download the data directly from the command line using [`curl`](ht
 
 ![curl raw](images/curl_no_output.png)
 
-`curl https://think.cs.vt.edu/corgis/datasets/csv/ufo_sightings/ufo_sightings.csv -o nicar_23_ufos.csv`
+If you're seeing this you did it right! Your computer did exactly what you told it to do: You asked for the data from the csv file and there it is. Neat, but not super useful. Let's send the response into a file with the `output` flag, denoted with `-o`. A handy feature of working in the command line is that you don't have to type it all out again, just hit the up arrow until you see your previous command. Add the `-o` and a filename. Let's go with `nicar_23_ufos.csv`.
 
-SCREENSHOT
+So: `curl https://think.cs.vt.edu/corgis/datasets/csv/ufo_sightings/ufo_sightings.csv -o nicar_23_ufos.csv`. If you did it right, you should see this:
+
+![full curl](images/curl_full_ss.png)
 
 The developers explain what their data set looks like:
 
-[data dictionary screenshot](images/ufo_data_types_nicar_23.png)
+![data dictionary screenshot](images/ufo_data_types_nicar_23.png)
 
 The data seems to contain interesting datapoints for us to rummage through and conjure up some story ideas. You could always open Excel to peek at your data:
 
