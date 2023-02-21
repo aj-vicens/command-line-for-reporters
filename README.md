@@ -168,15 +168,21 @@ For our purposes, we probably don't need all 16 of these columns, but hard to kn
 
 We're already seeing some interesting things. For instance, I can see that the top five cities listed are all out west (Seattle, Phoenix, Las Vegas, Portland and Los Angeles). I can see that there are 51 unique states listed, and just one unique country, the U.S. The numbers are formatted incorrectly, but I can see that the earliest sighting year is 1910, and the most recent is 2014 (the most active years were 2011, 2012 and 2013). There are description excerpts and shapes(!) as well, and columns we don't really need for now (latitude/longitude, the day of the week, etc).
 
-Returning to the `csvcut` command, we can easily grab what we want. If we run `csvcut -n 2023[tab complete]` we get the full list of columns again. Let's ride with the city, state, shape, description and sighted year (columns 1, 2, 4, 5, 6 and 9). We can enter either case-sensitive column names or the numbers (which I prefer). We have to envoke the `-c` flag to specify that we're grabbing columns, so: `csvcut -c 1,2,4,5,6,9 nicar23[tab complete]` (no spaces between numbers). 
+Returning to the `csvcut` command, we can easily grab what we want. If we run `csvcut -n 2023[tab complete]` we get the full list of columns again. Let's ride with the city, state, shape, description and sighted year (columns 1, 2, 4, 6 and 9). We can enter either case-sensitive column names or the numbers (which I prefer). We have to envoke the `-c` flag to specify that we're grabbing columns, so: `csvcut -c 1,2,4,6,9 nicar23[tab complete]` (no spaces between numbers). 
 
 Notice what happens? Your computer is doing exactly what you're telling it to do: Cutting those columns from the original data set and printing them to the terminal window.
 
-![csvcut no redirect screenshot](images/csvcut_raw_ufos.png)
+![csvcut no redirect screenshot](images/_csvcut_raw_ufos.png)
 
-We'd probably prefer those new columns are available to us in a new sheet. Using the `>` redirection command from above, let's take the previous command and use it to create a new CSV. Enter `csvcut -c 5,6,7,10,11 2019[tab complete] > uk_crime_trimmed.csv`. If you enter the command and nothing happens, that's good! Now try `csvcut -n` on our new CSV, `uk_cri[tab complete]`.
+If we're checking that we grabbed all the rows, we can pipe the results of that into the `wc -l` command, which counts rows. It confirms that we have all 60,633 rows. Nice. We can also pipe it into the `| csvlook | less -S` command to see it more clearly, like we did at the beginning:
 
-![csvcut on new trimmed file](images/uk_trimmed_csvcut_n.png)
+![csvcut clean look](images/csvcut_and_look_less_ufos.png)
+
+If you arrow to the right you can see that we only have the columns we want: city, state, shape, description, and year of sighting. Nice.
+
+It's great to look in our terminal window but we probably prefer those new columns are available to us in a new sheet. Hit `q` to exit that view and then using the `>` redirection command from above, let's take the previous command and use it to create a new CSV. Enter `csvcut -c 1,2,4,6,9 nicar23[tab complete] > ufos_trimmed.csv`. If you enter the command and nothing happens, that's good! Now try `csvcut -n` on our new CSV, `ufos_[tab complete]`.
+
+![csvcut on new trimmed file](images/csvcut_redirect.png)
 
 Ah ha! Now we're down to five columns. That's a bit more manageable. Let's run some basic stats on these columns with the `csvstat` command. So, `csvstat uk_cri[tab complete].` This command quickly summarizes the data in our columns, giving us a quick overview of what we're working with. The `Latitude` and `Longitude` statistics aren't all that telling, so there's no reason to focus there right now. But the `Location`, `Crime type`, and `Last outcome category` columns did return some basic counts that we can look at.
 
