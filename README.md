@@ -137,9 +137,14 @@ Let's try and download the data directly from the command line using [`curl`](ht
 
 SCREENSHOT
 
-The data contains interesting datapoints for us to search on, group by and perhaps conjure up some story ideas:
+The developers explain what their data set looks like:
 
-![data dictionary screenshot](images/ufo_data_types_nicar_23.png)
+[data dictionary screenshot](images/ufo_data_types_nicar_23.png)
+
+The data seems to contain interesting datapoints for us to rummage through and conjure up some story ideas. You could always open Excel to peek at your data:
+
+![excel screenshot](images/ufo_excel_ss.png)
+
 
 How many rows are in this spreadsheet? You can count manually in Excel, sure. Or, in the command line, you could type `wc -l 2019[tab complete]` and see that there are 86,075 rows very quickly (it doesn't count the header row). You'll come to learn that cruising around in the command line can be very quick.
 
