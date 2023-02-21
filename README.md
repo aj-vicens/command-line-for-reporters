@@ -154,9 +154,9 @@ Ok, so now we're ready for CSVKit. For a quick peek at that file, type `csvlook 
 
 ![csvlook raw ufos](images/ufos_csvlook_raw.png)
 
-Ack. Not so good. Let's clean that up a bit by piping the output of that command into a `less -S` command, which allows us to look at the data one page at a time. With `-S` we cut the lines off at the width of our terminal window, so we can organize things a bit. So you're going to type in `csvlook 2019[tab complete] | less -S`. You can see the left and right arrows to see the full rows. Hit `q` to get out of that view.
+Ack. Not so good. Let's clean that up a bit by piping the output of that command into a `less -S` command, which allows us to look at the data one page at a time. With `-S` we cut the lines off at the width of our terminal window, so we can organize things a bit. So you're going to type in `csvlook 2023[tab complete] | less -S`. You can see the left and right arrows to see the full rows. Hit `q` to get out of that view.
 
-![csvlook screenshot](images/uk_csvlook_less_ss.png)
+![csvlook less-S screenshot](images/csvlook_less_ufos.png)
 
 OK, now we're getting somewhere. We can cleanly see what we're working with, but scrolling back and forth is a bit annoying. Let's pare this down a bit. How about we start by listing out the columns. Enter `csvcut -n 2019[tab complete]`.
 
