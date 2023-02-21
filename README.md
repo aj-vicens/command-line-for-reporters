@@ -126,7 +126,11 @@ That was just a quick example to show how we can create directories, files, file
 #### Let's jump in to CSVKit.
 For my quick tutorial we'll be using [UFO sighting data](https://think.cs.vt.edu/corgis/csv/ufo_sightings/) organized by the "R for Data Science Online Learning Community" in 2019, which seems to be based on the work of another researcher who attempted to organize a century's worth of UFO reports from the NATIONAL UFO Reporting Center Online Database. [As the researcher explains](https://github.com/planetsig/ufo-reports), the data was incredibly difficult to standardize and is likely incomplete. But, for our purposes, this is a good set to explore.
 
-Let's try and download the data directly from the command line using [`curl`](https://www.freecodecamp.org/news/how-to-start-using-curl-and-why-a-hands-on-introduction-ea1c913caaaa/), a powerful tool that can do all kinds of things, including pull data off websites and servers. Luckily this is fairly straight forward:
+The developers explain what their data set looks like:
+
+![data dictionary screenshot](images/ufo_data_types_nicar_23.png)
+
+The data seems to contain interesting datapoints for us to rummage through and conjure up some story ideas. So let's try and download the data directly from the command line using [`curl`](https://www.freecodecamp.org/news/how-to-start-using-curl-and-why-a-hands-on-introduction-ea1c913caaaa/), a powerful tool that can do all kinds of things, including pull data off websites and servers. Luckily this is fairly straight forward:
 
 1. We're invoking `curl`
 2. We are feeding curl the location of the csv file we want (https://think.cs.vt.edu/corgis/datasets/csv/ufo_sightings/ufo_sightings.csv)
@@ -139,20 +143,16 @@ So: `curl https://think.cs.vt.edu/corgis/datasets/csv/ufo_sightings/ufo_sighting
 
 ![full curl](images/curl_full_ss.png)
 
-The developers explain what their data set looks like:
-
-![data dictionary screenshot](images/ufo_data_types_nicar_23.png)
-
-The data seems to contain interesting datapoints for us to rummage through and conjure up some story ideas. You could always open Excel to peek at your data:
+And the csv file will have landed in your directory for you to work with. Now that we have You could always open Excel to peek at your data:
 
 ![excel screenshot](images/ufo_excel_ss.png)
 
 
-How many rows are in this spreadsheet? You can count manually in Excel, sure. Or, in the command line, you could type `wc -l 2019[tab complete]` and see that there are 86,075 rows very quickly (it doesn't count the header row). You'll come to learn that cruising around in the command line can be very quick.
+How many rows are in this spreadsheet? You can count manually in Excel, sure. Or, in the command line, you could type `wc -l 2023[tab complete]` and see that there are 60,633 rows very quickly (it doesn't count the header row). You'll come to learn that cruising around in the command line can be very quick.
 
-Ok, so let's try CSVKit. For a quick peek at that file, type `csvlook 2019[tab complete]`.
+Ok, so now we're ready for CSVKit. For a quick peek at that file, type `csvlook 2023[tab complete]`.
 
-![csvlook raw screenshot uk](images/uk_crime_csvlook_ss.png)
+![csvlook raw ufos](images/ufos_csvlook_raw.png)
 
 Ack. Not so good. Let's clean that up a bit by piping the output of that command into a `less -S` command, which allows us to look at the data one page at a time. With `-S` we cut the lines off at the width of our terminal window, so we can organize things a bit. So you're going to type in `csvlook 2019[tab complete] | less -S`. You can see the left and right arrows to see the full rows. Hit `q` to get out of that view.
 
