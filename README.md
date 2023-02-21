@@ -143,7 +143,7 @@ So: `curl https://think.cs.vt.edu/corgis/datasets/csv/ufo_sightings/ufo_sighting
 
 ![full curl](images/curl_full_ss.png)
 
-And the csv file will have landed in your directory for you to work with. Now that we have You could always open Excel to peek at your data:
+And the csv file will have landed in your directory for you to work with. Now that we have it, we could always open Excel to peek at the data:
 
 ![excel screenshot](images/ufo_excel_ss.png)
 
@@ -158,15 +158,21 @@ Ack. Not so good. Let's clean that up a bit by piping the output of that command
 
 ![csvlook less-S screenshot](images/csvlook_less_ufos.png)
 
-OK, now we're getting somewhere. We can cleanly see what we're working with, but scrolling back and forth is a bit annoying. Let's pare this down a bit. How about we start by listing out the columns. Enter `csvcut -n 2019[tab complete]`.
+OK, now we're getting somewhere. We can cleanly see what we're working with, but scrolling back and forth is a bit annoying. Let's pare this down a bit. How about we start by listing out the columns. Enter `csvcut -n 2023[tab complete]`.
 
-![csvcut screenshot](images/uk_csvcut_n_ss.png)
+![csvcut screenshot](images/csvcut_ufos_23.png)
 
-For our purposes, we probably don't need all 12 of these columns. Let's just ride with `5,6,7,10,11`. Luckily CSVKit makes this very simple with the `csvcut` command using either the column numbers or the column names. Let's go with column numbers for now. So enter `csvcut -c 5,6,7,10,11 2019[tab complete]`.
+For our purposes, we probably don't need all 16 of these columns, but hard to know exactly what we want. Luckily we can try to get a quick overview of what each column can tell us with the `csvstat` command:
+
+![csvstat all columns screenshot](images/csvstat_full_ufos.png)
+
+We're already seeing some interesting things. For instance, I can see that the top five cities listed are all out west (Seattle, Phoenix, Las Vegas, Portland and Los Angeles). I can see that there are 51 unique states listed, and just one unique country, the U.S. The numbers are formatted incorrectly, but I can see that the earliest sighting year is 1910, and the most recent is 2014 (the most active years were 2011, 2012 and 2013). There are description excerpts and shapes(!) as well, and columns we don't really need for now (latitude/longitude, the day of the week, etc).
+
+Returning to the `csvcut` command, we can easily grab what we want. If we run `csvcut -n 2023[tab complete]` we get the full list of columns again. Let's ride with the city, state, shape, description and sighted year (columns 1, 2, 4, 5, 6 and 9). We can enter either case-sensitive column names or the numbers (which I prefer). We have to envoke the `-c` flag to specify that we're grabbing columns, so: `csvcut -c 1,2,4,5,6,9 nicar23[tab complete]` (no spaces between numbers). 
 
 Notice what happens? Your computer is doing exactly what you're telling it to do: Cutting those columns from the original data set and printing them to the terminal window.
 
-![csvcut no redirect screenshot](images/csvcut_uk_ss.png)
+![csvcut no redirect screenshot](images/csvcut_raw_ufos.png)
 
 We'd probably prefer those new columns are available to us in a new sheet. Using the `>` redirection command from above, let's take the previous command and use it to create a new CSV. Enter `csvcut -c 5,6,7,10,11 2019[tab complete] > uk_crime_trimmed.csv`. If you enter the command and nothing happens, that's good! Now try `csvcut -n` on our new CSV, `uk_cri[tab complete]`.
 
