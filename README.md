@@ -194,7 +194,15 @@ We're down to our five columns. That's a bit more manageable. Let's re-run the `
 
 We immediately see that the most common shapes are lights (12,895) followed by triangles 6,268). Triangles are a key shape in the UFO world, so I want to make an additional sheet just for triangles. We can also list out all 28 unique entries in the shape column with this command: `csvcut -c 3 ufos_trimmed.csv | sed 1d | sort | uniq`. If you want to dig in more, [`sed`](https://www.interviewkickstart.com/learn/sed-command-in-linux-unix-with-examples) is a powerful tool for working with text, and `uniq` is a command built into the command line for filtering out repeated lines in a file (run `man uniq` to learn more). 
 
-That command tells us we have other shapes such as "changed" and "changing," and "cigar" (which is very common), but also things like "cylinder," "egg," "disk" and others. Let's grab those triangles using `csvgrep`, which allows us to use ["global regular expression print"}(https://www.digitalocean.com/community/tutorials/grep-command-in-linux-unix) to pull out specific words.
+That command tells us we have other shapes such as "changed" and "changing," and "cigar" (which is very common), but also things like "cylinder," "egg," "disk" and others. Let's grab those triangles using `csvgrep`, which allows us to use ["global regular expression print"]  (https://www.digitalocean.com/community/tutorials/grep-command-in-linux-unix) to pull out specific words.
+
+Let's grab only the rows where the shape is listed as `triangle`. 
+
+`cat ufos_trimmed.csv | csvgrep -c 3 -m triangle | csvlook | less -S `
+
+![ufos_triangles screenshot](ufos_triangles_nicar23)
+
+
 
 TRIANGLE
 REDIRECT
