@@ -200,7 +200,7 @@ Let's grab only the rows where the shape is listed as `triangle`.
 
 `cat ufos_trimmed.csv | csvgrep -c 3 -m triangle | csvlook | less -S `
 
-![ufos_triangles screenshot](ufos_triangles_nicar23)
+![ufos_triangles screenshot](ufos_triangles_nicar23.png)
 
 
 
