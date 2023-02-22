@@ -202,6 +202,9 @@ Let's grab only the rows where the shape is listed as `triangle`.
 
 ![ufos_triangles screenshot](images/ufos_triangles_nicar23.png)
 
+Hit `q` to hop out of that view, then the up arrow to pull up the command again. Pipe it into the `wc -l` command so we can see how many triangle cases are in the set: 6,270. Cool. Let's make a new sheet just for triangles. 
+
+`cat ufos_trimmed.csv | csvgrep -c 3 -m triangle > ufos_triangles.csv`
 
 
 TRIANGLE
