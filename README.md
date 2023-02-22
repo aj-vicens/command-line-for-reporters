@@ -97,7 +97,7 @@ The beautiful thing about the command line is the plethora of tools out there th
 
 `csvkit`: This is an amazing Python-based tool to help you work with CSV files on the command line. Written by [Chris Groskopf](https://twitter.com/onyxfish), CSVKit is a great way to get a handle on the data you have in a given spreadsheet, clean it up a bit, and get your story jump-started. I use this all the time and recommend it so highly that I think we'll run through a quick tutorial. Keep in mind that Chris writes extensive documentation for all of his tools, so please do head over to the [tutorial he's written](https://csvkit.readthedocs.io/en/1.0.1/). I'll provide an incredibly abridged version below.
 
-`dkimpy`: At NICAR 2019 I learned of a neat command line tool called `dkimpy` that allows a user to verify the authenticity of emails with one command ([read more here](https://www.propublica.org/nerds/authenticating-email-using-dkim-and-arc-or-how-we-analyzed-the-kasowitz-emails) via ProPublica's Jeremy B. Merrill).
+`dkimpy`: At NICAR 2019 I learned of a neat command line tool called `dkimpy` that allows a user to verify the authenticity of emails with one command ([read more here](https://www.propublica.org/nerds/authenticating-email-using-dkim-and-arc-or-how-we-analyzed-the-kasowitz-emails) via the Washington Post's Jeremy B. Merrill).
 
 `Instaloader`: This tool allows for bulk downloading of Instagram content and metadata. It's very neat and handy. Go [take a look](https://instaloader.github.io/).
 
@@ -196,8 +196,10 @@ We immediately see that the most common shapes are lights (12,895) followed by t
 
 That command tells us we have other shapes such as "changed" and "changing," and "cigar" (which is very common), but also things like "cylinder," "egg," "disk" and others. Let's grab those triangles using `csvgrep`, which allows us to use ["global regular expression print"}(https://www.digitalocean.com/community/tutorials/grep-command-in-linux-unix) to pull out specific words.
 
+TRIANGLE
+REDIRECT
 
-
+WE CAN ALSO SEARCH WITHIN THE TEXT NARRATIVE. IF WE RUN CSVLOOK ON OUR TRIMMED SHEET, YOU CAN uSE THE SPACEBAR TO SCROLL. QUICK READING HAS INTERESTING WORDS AND PHRASES LIKE MISSING TImE, ABDUCTION, ETC
 
 
 
