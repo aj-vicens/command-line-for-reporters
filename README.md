@@ -206,28 +206,24 @@ Hit `q` to hop out of that view, then the up arrow to pull up the command again.
 
 `cat ufos_trimmed.csv | csvgrep -c 3 -m triangle > ufos_triangles.csv`
 
+`csvgrep` can also search within blocks of text. Pull up the trimmed sheet again with the clean look from `csvlook`: 
 
-TRIANGLE
-REDIRECT
+`cat ufos_trimmed.csv| csvlook | less -S`
+
+Quickly scan through the descriptions. You can hold the down arrow or hit the space bar to scroll. Phrases that stand out for me are "missing time," "abduction," "USAF," 
+
 
 WE CAN ALSO SEARCH WITHIN THE TEXT NARRATIVE. IF WE RUN CSVLOOK ON OUR TRIMMED SHEET, YOU CAN uSE THE SPACEBAR TO SCROLL. QUICK READING HAS INTERESTING WORDS AND PHRASES LIKE MISSING TImE, ABDUCTION, ETC
+USE REGULAR GREP --- CAN GO CASE SENSITIVE
 
 
 
 
-I want to dig in a bit on the type of crimes that were reported "On or near Supermarket". Luckily we can do this very easily. First, let's grab all the rows that match "On or near Supermarket": `csvcut 1-5 uk_cri[tab complete] | csvgrep -c Location -m "On or near Supermarket" | csvsort -c "Crime type" -r | csvlook`
 
 ![Supermarket screenshot](images/uk_supermarket_ss.png)
 
-So now we have data for just the supermarket location designation. We can break this off into it's own data set rather easily. If you press the `up` arrow you can cycle through your previous commands so you don't have to type that long string again. Do that until you come to that very long command we just did. Take off the last command and the pipe `| csvlook` (it'll help with formatting), and add the redirect `>` and a new filename like `uk_supermarket.csv`.
-
-So it'll look like this: `csvcut -c 1-5 uk_crime_trimmed.csv | csvgrep -c Location -m "On or near Supermarket" | csvsort -c "Crime type" -r > uk_supermarket.csv.`
-
-Now, let's run `csvstat` on our new sheet: `csvstat uk_supe[tab complete]`.
-
 ![supermarket stats new sheet screenshot](images/uk_supermarket_stat_final.png)
 
-You can see that we now have just one location, and the number -- 3,254 -- matches the stats from when we ran this the first time. We can see that the data includes 14 unique types of crime, the most common of which is "Violence and sexual offense" (544) followed closely by "Shoplifting" (531). There's also a lot of "Anti-social behavior". Interesting.
 
 Again, this data needs to be vetted, checked against your sources, and treated with a grain of salt. But, *in just a matter of minutes* you have a decent grasp on threads your data is starting to reveal, and you have some things you can begin to look into.
 
