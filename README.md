@@ -69,7 +69,7 @@ Now that you have your Terminal app running, let's get the hang of some of the m
 
 `clear`: Once you start cruising around, your terminal window will fill up rather quick. Use `clear` to clear it all away. Don't worry though, your stuff isn't gone. Scroll up and it's all right there.
 
-*tab complete*: After you begin typing any file name or command, you can hit `tab` to autocomplete the name of said file or command up until the end of uniqueness. That will come in handy when you want to cat a file named `ohMyGodThisIsALongFileName.txt`.
+`tab complete`: After you begin typing any file name or command, you can hit `tab` to autocomplete the name of said file or command up until the end of uniqueness. That will come in handy when you want to cat a file named `ohMyGodThisIsALongFileName.txt`.
 
 `ctrl-C`: If at any point things hang up, using `ctrl-C` will quit whatever you're doing and exit whatever command the computer is trying to execute.
 
