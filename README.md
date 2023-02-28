@@ -210,7 +210,13 @@ Hit `q` to hop out of that view, then the up arrow to pull up the command again.
 
 `cat ufos_trimmed.csv| csvlook | less -S`
 
-Quickly scan through the descriptions. You can hold the down arrow or hit the space bar to scroll. Phrases that stand out for me are "missing time," "abduction," "USAF," 
+Quickly scan through the descriptions. You can hold the down arrow or hit the space bar to scroll. Phrases that stand out for me are "missing time," "abduction," "USAF," etc. We can search within the text narrative using `grep`. Let's try to search for the phrase "missing time": 
+
+`cat ufos_trimmed.csv | grep -i "missing time" |  csvlook | less -S`
+
+Quick step-by-step on the command above: we're reading the contents of our trimmed file, piping that into the `grep` command, piping that into the `csvlook` command to make it nice, and then piping that into the `less -S` command to make it even easier to format and read.
+
+![missing time screenshot](images/missingtime_nicar23.png)
 
 
 WE CAN ALSO SEARCH WITHIN THE TEXT NARRATIVE. IF WE RUN CSVLOOK ON OUR TRIMMED SHEET, YOU CAN uSE THE SPACEBAR TO SCROLL. QUICK READING HAS INTERESTING WORDS AND PHRASES LIKE MISSING TImE, ABDUCTION, ETC
