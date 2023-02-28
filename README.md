@@ -220,16 +220,15 @@ Quick step-by-step on the command above: we're reading the contents of our trimm
 
 Let's try the same thing for "abduction." All you have to do is up arrow in your terminal to the last command and replace "missing time" with "abduction":
 
+`cat ufos_trimmed.csv | grep -i "abduction" |  csvlook | less -S`
+
 ![abduction screenshot](images/grepAbduction_nicar23.png)
 
+Don't forget we can redirect the results of any of these queries into a new sheet for review later:
 
+`cat ufos_trimmed.csv | grep -i "missing time" |  csvlook | less -S > ufos_abduction.csv`
 
-
-
-![supermarket stats new sheet screenshot](images/uk_supermarket_stat_final.png)
-
-
-Again, this data needs to be vetted, checked against your sources, and treated with a grain of salt. But, *in just a matter of minutes* you have a decent grasp on threads your data is starting to reveal, and you have some things you can begin to look into.
+As with any data you work with, it needs to be vetted, checked against your sources, and treated with a grain of salt. But, *in just a matter of minutes* you have a decent grasp on threads your data is starting to reveal, and you have some things you can begin to look into.
 
 This was a *very* basic runthrough of what CSVKit can do. I would highly recommend running through [the full CSVKit tutorial and associated documentation](https://csvkit.readthedocs.io/en/1.0.3/index.html) which will introduce you to more powerful tools available, including merging datasets, running SQL queries, and getting your data into a web-ready format.
 
