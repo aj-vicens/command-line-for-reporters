@@ -150,17 +150,17 @@ And the csv file will have landed in your directory for you to work with. Now th
 ![excel screenshot](images/ufo_excel_ss.png)
 
 
-How many rows are in this spreadsheet? You can count manually in Excel, sure. Or, in the command line, you could type `wc -l 2023[tab complete]` and see that there are 60,633 rows very quickly (it doesn't count the header row). You'll come to learn that cruising around in the command line can be very quick.
+How many rows are in this spreadsheet? You can count manually in Excel, sure. Or, in the command line, you could type `wc -l nicar_23[tab complete]` and see that there are 60,633 rows very quickly (it doesn't count the header row). You'll come to learn that cruising around in the command line can be very quick.
 
-Ok, so now we're ready for CSVKit. For a quick peek at that file, type `csvlook 2023[tab complete]`.
+Ok, so now we're ready for CSVKit. For a quick peek at that file, type `csvlook nicar_23[tab complete]`.
 
 ![csvlook raw ufos](images/ufos_csvlook_raw.png)
 
-Ack. Not so good. Let's clean that up a bit by piping the output of that command into a `less -S` command, which allows us to look at the data one page at a time. With `-S` we cut the lines off at the width of our terminal window, so we can organize things a bit. So you're going to type in `csvlook 2023[tab complete] | less -S`. You can see the left and right arrows to see the full rows. Hit `q` to get out of that view.
+Ack. Not so good. Let's clean that up a bit by piping the output of that command into a `less -S` command, which allows us to look at the data one page at a time. With `-S` we cut the lines off at the width of our terminal window, so we can organize things a bit. So you're going to type in `csvlook nicar_23[tab complete] | less -S`. You can see the left and right arrows to see the full rows. Hit `q` to get out of that view.
 
 ![csvlook less-S screenshot](images/csvlook_less_ufos.png)
 
-OK, now we're getting somewhere. We can cleanly see what we're working with, but scrolling back and forth is a bit annoying. Let's pare this down a bit. How about we start by listing out the columns. Enter `csvcut -n 2023[tab complete]`.
+OK, now we're getting somewhere. We can cleanly see what we're working with, but scrolling back and forth is a bit annoying. Let's pare this down a bit. How about we start by listing out the columns. Enter `csvcut -n nicar_23[tab complete]`.
 
 ![csvcut screenshot](images/csvcut_ufos_23.png)
 
@@ -170,7 +170,7 @@ For our purposes, we probably don't need all 16 of these columns, but hard to kn
 
 We're already seeing some interesting things. For instance, I can see that the top five cities listed are all out west (Seattle, Phoenix, Las Vegas, Portland and Los Angeles). I can see that there are 51 unique states listed, and just one unique country, the U.S. The numbers are formatted incorrectly, but I can see that the earliest sighting year is 1910, and the most recent is 2014 (the most active years were 2011, 2012 and 2013). There are description excerpts and shapes(!) as well, and columns we don't really need for now (latitude/longitude, the day of the week, etc).
 
-Returning to the `csvcut` command, we can easily grab what we want. If we run `csvcut -n 2023[tab complete]` we get the full list of columns again. Let's ride with the city, state, shape, description and sighted year (columns 1, 2, 4, 6 and 9). We can enter either case-sensitive column names or the numbers (which I prefer). We have to envoke the `-c` flag to specify that we're grabbing columns, so: `csvcut -c 1,2,4,6,9 nicar23[tab complete]` (no spaces between numbers). 
+Returning to the `csvcut` command, we can easily grab what we want. If we run `csvcut -n nicar_23[tab complete]` we get the full list of columns again. Let's ride with the city, state, shape, description and sighted year (columns 1, 2, 4, 6 and 9). We can enter either case-sensitive column names or the numbers (which I prefer). We have to envoke the `-c` flag to specify that we're grabbing columns, so: `csvcut -c 1,2,4,6,9 nicar23[tab complete]` (no spaces between numbers). 
 
 Notice what happens? Your computer is doing exactly what you're telling it to do: Cutting those columns from the original data set and printing them to the terminal window.
 
